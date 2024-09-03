@@ -1,27 +1,19 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text, ScrollView } from "react-native";
+import { View, StyleSheet, Text, ScrollView, TouchableOpacity, Image, FlatList } from "react-native";
+
+import RecipeData from '../contents/data_recipes.json';
+import ItemRecipe from "../../components/ItemRecipe";
 
 const RecipeList = () => {
     return (
         <View style={styles.container}>
             <View>
-                <ScrollView style={{padding: 10}}>
-                    <View style={styles.card}>
-                        <Text>Isinya Resep</Text>
-                    </View>
-                    <View style={styles.card}>
-                        <Text>Isinya Resep</Text>
-                    </View>
-                    <View style={styles.card}>
-                        <Text>Isinya Resep</Text>
-                    </View>
-                    <View style={styles.card}>
-                        <Text>Isinya Resep</Text>
-                    </View>
-                    <View style={styles.card}>
-                        <Text>Isinya Resep</Text>
-                    </View>
-                </ScrollView>
+                    <FlatList 
+                        data={RecipeData.recipes}
+                        keyExtractor={(item) => item.id.toString()}
+                        renderItem={({item}) => (<ItemRecipe item={item}/>)}
+                    >
+                    </FlatList>
             </View>
         </View>
     );
@@ -47,14 +39,12 @@ const styles = StyleSheet.create({
     },
     card: {
         flex: 1,
-        flexDirection: "column",
+        flexDirection: "row",
         backgroundColor: "white",
         alignItems: "center",
-        justifyContent: "center",
-        width: 380,
-        padding: 10,
-        borderRadius: 4,
-        marginVertical: 6,
+        justifyContent: "flex-start",
+        width: 500,
+        marginVertical: 1,
     },
 });
 

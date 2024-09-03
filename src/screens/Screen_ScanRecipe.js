@@ -5,7 +5,7 @@ const ScanRecipe = () => {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <Text>Isinya Scan</Text>
+                <Text>Scan</Text>
             </View>
         </View>
     );

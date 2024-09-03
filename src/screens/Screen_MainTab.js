@@ -11,8 +11,8 @@ const Tab = createBottomTabNavigator();
 const MainTab = () => {
     return (
         <Tab.Navigator>
-            <Tab.Screen name="List Resep" component={RecipeList} options={{
-                tabBarLabel: "List Resep",
+            <Tab.Screen name="Recipes" component={RecipeList} options={{
+                tabBarLabel: "Recipes",
                 tabBarIcon: ({color, size, focused}) => (
                     <Ionicons
                         name={focused ? "list-sharp" : 'list-outline'}

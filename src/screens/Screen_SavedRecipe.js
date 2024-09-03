@@ -1,11 +1,23 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, FlatList } from "react-native";
+
+import ItemRecipe from "../../components/ItemRecipe";
+import RecipeData from "../contents/data_recipes.json";
 
 const SavedRecipe = () => {
     return (
         <View style={styles.container}>
-            <View style={styles.card}>
-                <Text>Isinya Saved</Text>
+            <View>
+                <FlatList 
+                    // key={idx}
+                    data={RecipeData.recipes}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({item}) => {
+                        if (item.id % 7 == 0)
+                            return (<ItemRecipe item={item}/>)
+                    }}
+                >
+                </FlatList>
             </View>
         </View>
     );
@@ -25,10 +37,10 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         alignItems: "center",
         justifyContent: "center",
-        width: 350,
-        padding: 30,
-        borderRadius: 15,
-        marginVertical: 20,
+        width: 380,
+        padding: 10,
+        borderRadius: 8,
+        marginVertical: 6,
     },
     boxshadow: {
             shadowColor: "#000",
