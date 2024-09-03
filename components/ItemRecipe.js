@@ -1,11 +1,13 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
-import FastImage from "react-native-fast-image";
 
 const ItemRecipe = ({item}) => {
+    const nav = useNavigation();
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => nav.navigate('Detail Recipe', {
+            recipeId: item.id,
+        })}>
             <View style={styles.container}>
                 <View style={styles.card}>
                     <Image source={{uri: item.image}} style={{width: 100, height: 100, marginHorizontal: 10, borderRadius: 8,}}></Image>

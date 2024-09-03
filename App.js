@@ -3,18 +3,16 @@ import { createStackNavigator, HeaderStyleInterpolators } from "@react-navigatio
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
 import MainTab from './src/screens/Screen_MainTab';
+import DetailRecipe from './src/screens/Screen_DetailRecipe';
 
 const Stack = createStackNavigator();
 
 export default function App() {
     return (
     <NavigationContainer>
-        <Stack.Navigator
-            screenOptions={
-                headerStyle={ backgroundColor: '#f9f9f9', }
-            }
-        >
+        <Stack.Navigator>
             <Stack.Screen name="Biarkan Dia Memasak App" component={MainTab} options={{headerShown: false}}></Stack.Screen>
+            <Stack.Screen name="Detail Recipe" component={DetailRecipe} options={{headerShown: true}}></Stack.Screen>
         </Stack.Navigator>
     </NavigationContainer>
     );

@@ -3,6 +3,7 @@ import React from "react";
 import RecipeList from "./Screen_RecipeList";
 import ScanRecipe from "./Screen_ScanRecipe";
 import SavedRecipe from "./Screen_SavedRecipe";
+import DetailRecipe from "./Screen_DetailRecipe";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
